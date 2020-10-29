@@ -3,6 +3,8 @@ package controllers;
 import domain.AccessToken;
 import domain.CustomerLoginData;
 import services.AuthorizationService;
+import services.EService;
+import services.ServiceFactory;
 import services.interfaces.IAuthorizationService;
 
 import javax.ws.rs.*;
@@ -14,7 +16,7 @@ public class AuthorizationController {
     private IAuthorizationService authorizationService;
 
     public AuthorizationController(){
-        authorizationService=new AuthorizationService();
+        authorizationService = (IAuthorizationService) (new ServiceFactory()).create(EService.AUTH);
     }
 
     @GET

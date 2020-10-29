@@ -50,4 +50,9 @@ public class AuthorizationService implements IAuthorizationService {
         Customer authenticatedCustomer=signIn(data);
         return new AccessToken(issueToken(authenticatedCustomer));
     }
+
+    @Override
+    public boolean isService() {
+        return true;
+    }
 }

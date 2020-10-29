@@ -4,7 +4,7 @@ import domain.models.Customer;
 import repositories.entities.CustomerRepository;
 import repositories.interfaces.ICustomerRepository;
 
-public class CustomerService {
+public class CustomerService implements IService {
     private ICustomerRepository csRepo;
     private Customer cs=new Customer();
 
@@ -21,4 +21,8 @@ public class CustomerService {
         return csRepo.getCustomerByID(id);
     }
 
+    @Override
+    public boolean isService() {
+        return true;
+    }
 }

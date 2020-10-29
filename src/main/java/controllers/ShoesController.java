@@ -2,6 +2,8 @@ package controllers;
 
 import domain.models.Category;
 import domain.models.Shoes;
+import services.EService;
+import services.ServiceFactory;
 import services.ShoesService;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -12,7 +14,7 @@ public class ShoesController {
     private ShoesService sh;
 
     public ShoesController() {
-        sh = new ShoesService();
+        sh = (ShoesService) (new ServiceFactory()).create(EService.SHOES);
     }
     @GET
     public String hello(){
