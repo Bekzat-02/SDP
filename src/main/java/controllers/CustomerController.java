@@ -4,6 +4,8 @@ import domain.models.Customer;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import services.BuyService;
 import services.CustomerService;
+import services.EService;
+import services.ServiceFactory;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,8 +17,9 @@ public class CustomerController {
     private BuyService bc;
 
     public CustomerController() {
-        cs = new CustomerService();
-        bc= new BuyService();
+        ServiceFactory sf = new ServiceFactory();
+        cs = (CustomerService) sf.create(EService.CUSTOMER);
+        bc= (BuyService) sf.create(EService.BUY);
     }
 
     @GET

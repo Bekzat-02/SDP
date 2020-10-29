@@ -7,7 +7,7 @@ import repositories.interfaces.IShoesRepository;
 
 import java.util.List;
 
-public class ShoesService {
+public class ShoesService implements IService {
     private  final IShoesRepository ish=new ShoesRepository();
 
     public List<Category> categories(){
@@ -18,5 +18,10 @@ public class ShoesService {
     public List<Shoes> getCategory(long id) {
     List<Shoes> shoes=ish.findCategoryByID(id);
         return shoes;
+    }
+
+    @Override
+    public boolean isService() {
+        return true;
     }
 }
