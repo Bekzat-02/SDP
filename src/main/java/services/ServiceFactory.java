@@ -1,5 +1,7 @@
 package services;
 
+import services.interfaces.IService;
+
 public class ServiceFactory {
 
     public IService create(EService eService){

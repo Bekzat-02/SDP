@@ -4,6 +4,7 @@ import domain.models.Category;
 import domain.models.Shoes;
 import repositories.entities.ShoesRepository;
 import repositories.interfaces.IShoesRepository;
+import services.interfaces.IService;
 
 import java.util.List;
 

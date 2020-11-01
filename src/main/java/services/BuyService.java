@@ -3,6 +3,7 @@ package services;
 import domain.models.ShoppingCard;
 import repositories.entities.BuyRepository;
 import repositories.interfaces.IBuyRepository;
+import services.interfaces.IService;
 
 
 public class BuyService implements IService {

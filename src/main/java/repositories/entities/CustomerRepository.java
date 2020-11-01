@@ -15,9 +15,8 @@ public class CustomerRepository implements ICustomerRepository<Customer> {
     public static CustomerRepository getInstance(){
         if (customerRepository==null){
             customerRepository = new CustomerRepository();
-            return customerRepository;
         }
-        return null;
+        return customerRepository;
     }
 
     private CustomerRepository() {

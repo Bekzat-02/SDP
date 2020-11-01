@@ -3,6 +3,7 @@ package services;
 import domain.models.Customer;
 import repositories.entities.CustomerRepository;
 import repositories.interfaces.ICustomerRepository;
+import services.interfaces.IService;
 
 public class CustomerService implements IService {
     private ICustomerRepository csRepo;
@@ -13,8 +14,11 @@ public class CustomerService implements IService {
     }
 
     public void addCustomer(String fname,String lname,String email,String password){
+
         Customer customer=new Customer(fname,lname,email,password);
-        csRepo.add(customer);
+        if(fname!=null&&lname!=null&&email!=null&&password!=null) {
+            csRepo.add(customer);
+        }
     }
 
     public Customer getCustomerByID(long id){
