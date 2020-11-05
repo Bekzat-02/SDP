@@ -1,12 +1,14 @@
 package domain.models;
 
 public class Shoes {
+    private long id;
     private long category_id;
     private String shoes_name;
     private String description;
     private int price;
 
-    public Shoes(long categorie_id, String shoes_name, String description, int price) {
+    public Shoes(long id ,long categorie_id, String shoes_name, String description, int price) {
+        this.id=id;
         this.category_id = categorie_id;
         this.shoes_name = shoes_name;
         this.description = description;
@@ -14,6 +16,14 @@ public class Shoes {
     }
     public Shoes(){
 
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getCategory_id() {

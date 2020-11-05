@@ -1,9 +1,8 @@
 package controllers;
 
+import domain.MyList;
 import domain.models.Category;
 import domain.models.Shoes;
-import services.EService;
-import services.ServiceFactory;
 import services.ShoesService;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -14,7 +13,7 @@ public class ShoesController {
     private ShoesService sh;
 
     public ShoesController() {
-        sh = (ShoesService) (new ServiceFactory()).create(EService.SHOES);
+        sh = new ShoesService();
     }
     @GET
     public String hello(){
@@ -33,6 +32,7 @@ public class ShoesController {
     @Path("/category/{category_id}")
     public Response getCategoryByID(@PathParam("category_id") long id){
         List<Shoes> shoes= (List<Shoes>) sh.getCategory(id);
+        MyList myList;
         return Response.status(200).entity(shoes).build();
 
     }

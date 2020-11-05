@@ -1,10 +1,11 @@
+
 import controllers.CustomerController;
 import controllers.ShoesController;
+import jakarta.ws.rs.ApplicationPath;
 import javafx.stage.Stage;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +16,8 @@ public MyApplication(){
     packages("controllers");
     packages("filters");
 }
-}*/
+}
+*/
 
 @ApplicationPath("/")
 public class MyApplication extends Application {

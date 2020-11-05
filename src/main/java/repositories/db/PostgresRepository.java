@@ -10,8 +10,8 @@ public class PostgresRepository implements IDBRepository {
     @Override
     public Connection getConnection() {
         try {
-            String getConn = "jdbc:postgresql://localhost:5432/Midka";
-            Connection conn = DriverManager.getConnection(getConn, "postgres", "040916");
+            String getConn = "jdbc:mysql://localhost/sdp";
+            Connection conn = DriverManager.getConnection(getConn, "root", "");
             return conn;
         }
         catch(SQLException ex){
